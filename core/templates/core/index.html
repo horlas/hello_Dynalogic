@@ -34,7 +34,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Aurélia Gourbère</a>
       <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -45,7 +45,7 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">A propos</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
@@ -53,23 +53,73 @@
         </ul>
       </div>
     </div>
+
+      <!-- Message section -->
+
+  <div class="toast" data-delay="7000" >
+     {% if messages %}
+  {% for message in messages %}
+  <div class="toast-header">
+    <strong class="mr-auto text-primary">Cher visiteur</strong>
+  </div>
+  <div class="toast-body">
+    {{ message }}
+  </div>
+</div>
+  {% endfor %}
+    {% endif %}
   </nav>
 
   <!-- Header -->
   <header class="masthead bg-primary text-white text-center">
     <div class="container">
       <img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="">
-      <h1 class="text-uppercase mb-0">Start Bootstrap</h1>
+      <h1 class="text-uppercase mb-0">Hello Dynalogic !</h1>
       <hr class="star-light">
-      <h2 class="font-weight-light mb-0">Web Developer - Graphic Artist - User Experience Designer</h2>
+      <h2 class="font-weight-light mb-0">J'ai vu votre annonce de recherche d'un stagiaire développeur Django .<br>
+        Le ton et le descriptif m'ont énormément plu. <br> Je viens d'etre diplomée développeur Django Python . <br>
+        Seriez-vous encore à la recherche de nouvelles recrues ? <br> Pour ma part, je suis à la recherche d'une première expérience.<br>
+      J'habite à Montpellier mais cependant je me dis vous seriez peut-etre ouvert à un emploi à distance avec déplacements réguliers au siège...<br>
+      </h2>
     </div>
   </header>
 
-  <!-- Portfolio Grid Section -->
-  <section class="portfolio" id="portfolio">
+
+
+
+
+
+
+
+
+  <!-- About Section -->
+  <section class=" mb-0" id="about">
     <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+      <h2 class="text-center text-uppercase">A propos</h2>
       <hr class="star-dark mb-5">
+      <div class="row">
+        <div class="col-lg-4 ml-auto">
+          <p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+        </div>
+        <div class="col-lg-4 mr-auto">
+          <p class="lead">Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a class="btn btn-xl btn-outline-dark" href="#">
+          <i class="fas fa-download mr-2"></i>
+          CV téléchargeable!
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Portfolio Grid Section -->
+  <section class="portfolio bg-primary " id="portfolio">
+    <div class="container">
+      <h2 class="text-center text-uppercase text-white  mb-0">Portfolio</h2>
+      <hr class="star-light mb-5">
       <div class="row">
         <div class="col-md-6 col-lg-4">
           <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
@@ -135,27 +185,7 @@
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="bg-primary text-white mb-0" id="about">
-    <div class="container">
-      <h2 class="text-center text-uppercase text-white">About</h2>
-      <hr class="star-light mb-5">
-      <div class="row">
-        <div class="col-lg-4 ml-auto">
-          <p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
-        </div>
-        <div class="col-lg-4 mr-auto">
-          <p class="lead">Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
-        </div>
-      </div>
-      <div class="text-center mt-4">
-        <a class="btn btn-xl btn-outline-light" href="#">
-          <i class="fas fa-download mr-2"></i>
-          Download Now!
-        </a>
-      </div>
-    </div>
-  </section>
+
 
   <!-- Contact Section -->
   <section id="contact">
@@ -165,9 +195,21 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
 
-          <form name="sentMessage" id="contactForm" novalidate="novalidate" method="post">
+
+          <form name="sentMessage" action="{% url 'core:message' %}" novalidate="novalidate" method="post">
             {% csrf_token %}
+            {% if form.non_field_errors %}
+    <div class="alert alert-danger" role="alert">
+      {% for error in form.non_field_errors %}
+        {{ error }}
+      {% endfor %}
+    </div>
+  {% endif %}
+
             {% for field in form %}
+            {% for error in field.errors %}
+             {{ error }}
+            {% endfor %}
               <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>{{ field.label }}</label>
@@ -421,6 +463,11 @@
 
   <!-- Custom scripts for this template -->
   <script src="{% static 'core/js/freelancer.min.js' %}"></script>
+<!-- Authorize Toast -->
+<script>$(document).ready(function(){
+ $('.toast').toast('show');
+  $('.toast').toast({delay:15000, animation:false});
+});</script>
 
 </body>
 
