@@ -1,0 +1,12 @@
+.bg-primary {
+  background-color: #B34225 !important;
+}
+
+.bg-secondary {
+  background-color: #37B38A  !important;
+}
+
+hr.star-light:after {
+  color: #fff;
+  background-color: #B34225 ;
+}

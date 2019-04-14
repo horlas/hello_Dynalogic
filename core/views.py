@@ -6,10 +6,11 @@ from core.forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.http import FileResponse
 # Create your views here.
 
-class AccueilView(TemplateView, SuccessMessageMixin):
 
+class AccueilView(TemplateView, SuccessMessageMixin):
     template_name = "core/index.html"
 
     def get(self, request, *args, **kwargs):
@@ -22,14 +23,13 @@ class AccueilView(TemplateView, SuccessMessageMixin):
 class ContactView(FormView, SuccessMessageMixin):
     template_name = "core/index.html"
     form_class = ContactForm
-    # success_message = "votre message m'est bien parvenu"
-    success_url = '.'
 
     def post(self, request, *args, **kwargs):
 
         form = self.form_class(request.POST)
+
         if form.is_valid():
-            name = request.POST.get('name', '')
+            name = request.POST.get('nom', '')
             email = request.POST.get('email', '')
             message = request.POST.get('message', '')
 
@@ -37,6 +37,7 @@ class ContactView(FormView, SuccessMessageMixin):
                 try:
                     message = "{} has sent you a new message:\n\n{}".format(name,message)
                     send_mail('Nouveau contact', message, email, ['aurelia.gourbere@gmail.com'])
+                # to prevent headers injections
                 except BadHeaderError:
                     print('error')
                     messages.error(self.request, ('Entete invalide'))
@@ -44,24 +45,11 @@ class ContactView(FormView, SuccessMessageMixin):
                 messages.success(self.request, ("Merci pour votre message"))
                 return redirect(reverse_lazy('core:home'))
             else:
-                print('yes')
-                messages.info(self.request, ('message vide'))
-                return redirect(reverse_lazy('core:home'))
 
-        else :
-            print('No')
+                messages.info(self.request, ('message vide'))
+                return render(request, self.template_name, self.get_context_data(form=form))
+        else:
+
             messages.error(self.request, ('Votre message est invalide'))
             return render(request, self.template_name, self.get_context_data(form=form))
-
-
-# def form_valid(self, form):
-#         sender_name = form.cleaned_data['name']
-#         sender_email = form.cleaned_data['email']
-#         message = "{} has sent you a new message:\n\n{}".format(sender_name, form.cleaned_data['message'])
-#         send_mail('Nouveau contact', message, sender_email, ['aurelia.gourbere@gmail.com'])
-#         # print(form.cleaned_data['email'])
-#         return super(AccueilView, self).form_valid(form)
-
-
-
 

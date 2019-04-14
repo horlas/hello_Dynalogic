@@ -2,7 +2,7 @@ from django import forms
 
 
 class ContactForm(forms.Form):
-    name = forms.CharField(max_length=100,
+    nom = forms.CharField(max_length=100,
                            help_text='Saisissez votre nom')
     email = forms.EmailField(
         help_text="Saisissez votre email"

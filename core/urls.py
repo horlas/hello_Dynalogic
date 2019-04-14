@@ -6,5 +6,5 @@ app_name = 'core'
 
 urlpatterns = [
     path('', AccueilView.as_view(), name='home'),
-    path('massage/submit', ContactView.as_view(), name='message')
+    path('message/submit', ContactView.as_view(), name='message')
 ]
