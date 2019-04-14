@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4220bba0-b626-466b-993c-ba83271a28cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/static/core/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/static/core/img/profile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/static/core/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/core/static/core/scss/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/core/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/core/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="4220bba0-b626-466b-993c-ba83271a28cb" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,11 +10,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/templates/core/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="360" column="52" selection-start-line="360" selection-start-column="52" selection-end-line="360" selection-end-column="52" />
+            <state relative-caret-position="-570">
+              <caret line="85" selection-start-line="85" selection-end-line="85" />
               <folding>
                 <element signature="e#12773#12780#0" expanded="true" />
                 <element signature="e#14330#14337#0" expanded="true" />
@@ -37,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/static/core/css/freelancer.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="234">
+              <caret line="331" column="1" lean-forward="true" selection-start-line="331" selection-start-column="1" selection-end-line="331" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -109,8 +100,8 @@
       <find>src='</find>
       <find>utils</find>
       <find>background</find>
-      <find>cake</find>
       <find>light</find>
+      <find>cake</find>
     </findStrings>
     <replaceStrings>
       <replace>.js' %}&quot;</replace>
@@ -250,7 +241,7 @@
     <frame x="1279" y="24" width="1922" height="1033" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09435952" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09435952" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -261,7 +252,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.4077348" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.4077348" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32928178" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -386,10 +377,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/static/core/css/freelancer.css">
+    <entry file="file://$PROJECT_DIR$/core/templates/core/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="-570">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+          <folding>
+            <element signature="e#12773#12780#0" expanded="true" />
+            <element signature="e#14330#14337#0" expanded="true" />
+            <element signature="e#15924#15931#0" expanded="true" />
+            <element signature="e#17204#17211#0" expanded="true" />
+            <element signature="e#17451#17458#0" expanded="true" />
+            <element signature="e#19318#19325#0" expanded="true" />
+            <element signature="e#20993#21000#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -400,19 +400,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/core/index.html">
+    <entry file="file://$PROJECT_DIR$/core/static/core/css/freelancer.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="360" column="52" selection-start-line="360" selection-start-column="52" selection-end-line="360" selection-end-column="52" />
-          <folding>
-            <element signature="e#12773#12780#0" expanded="true" />
-            <element signature="e#14330#14337#0" expanded="true" />
-            <element signature="e#15924#15931#0" expanded="true" />
-            <element signature="e#17204#17211#0" expanded="true" />
-            <element signature="e#17451#17458#0" expanded="true" />
-            <element signature="e#19318#19325#0" expanded="true" />
-            <element signature="e#20993#21000#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="234">
+          <caret line="331" column="1" lean-forward="true" selection-start-line="331" selection-start-column="1" selection-end-line="331" selection-end-column="1" />
         </state>
       </provider>
     </entry>
