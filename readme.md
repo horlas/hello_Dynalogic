@@ -1,13 +1,14 @@
 # Installation de Hello Dynalogic
 
 ## Installations préalables:
-Ce petit site est requière python 3.6:
+Ce site requiert python 3.6:
 
 * S'assurer que cette version de python soit installée en local :
 
-``` python -V
+``` 
+python -V
 ```
-Sinon l'installer
+* Sinon l'installer
 
 ```
 sudo apt-get update
@@ -23,11 +24,12 @@ sudo apt-get install python3.6
 ```
 
 
-Nous aurons besoin d'avoir dans notre environnement de travail : pip et pipenv déjà installé:
+Nous aurons besoin d'avoir dans notre environnement de travail : pip et pipenv déjà installés:
 
 * Pour s'assurer que pip est installé, dans un shell,  taper 
 
-``` pip3 --version
+```
+ pip3 --version
 ```
 
 * Installer pip3 pour la version python3.6
@@ -58,7 +60,7 @@ cd hello_Dynalogic
 
 ```
 
-* Installer et activer l'environnement virtuel , lancer l'application
+* Installer et activer l'environnement virtuel , lancer l'application en local
 
 ```
 pipenv install
