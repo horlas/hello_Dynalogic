@@ -1,1 +1,7 @@
 .idea/
+hello_dynalogic/__pycache__/
+core/__pycache__/
+core/migrations/
+models.py
+admin.py
+
