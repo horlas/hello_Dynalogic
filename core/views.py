@@ -1,16 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, FormView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 from core.forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
-from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.http import FileResponse
 # Create your views here.
 
 
-class AccueilView(TemplateView, SuccessMessageMixin):
+class AccueilView(SuccessMessageMixin, TemplateView):
     template_name = "core/index.html"
 
     def get(self, request, *args, **kwargs):
@@ -20,7 +19,7 @@ class AccueilView(TemplateView, SuccessMessageMixin):
         return self.render_to_response(context)
 
 
-class ContactView(FormView, SuccessMessageMixin):
+class ContactView(SuccessMessageMixin, FormView):
     template_name = "core/index.html"
     form_class = ContactForm
 
